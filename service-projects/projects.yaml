@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-projects
+spec:
+  selector:
+    app: service-projects
+  type: NodePort
+  ports:
+    - name: http
+      port: 8081
+      nodePort: 30001
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-projects
+spec:
+  selector:
+    matchLabels:
+      app: service-projects
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: service-projects
+    spec:
+      containers:
+        - name: server
+          image: karpincom/service-projects:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8081
