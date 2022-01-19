@@ -25,7 +25,7 @@ public final class UserService {
 //    private final String projectURL = "http://localhost:8081/projects/";
 //    private final String supportURL = "http://localhost:8082/supports/";
     private final String projectURL = "http://service-projects:8081/projects/";
-    private final String supportURL = "http://service-support:8082/supports/";
+    private final String supportURL = "http://service-support:8082/supportsc/";
     public List<User> fetchAll() {
         return userRepo.findAll();
     }

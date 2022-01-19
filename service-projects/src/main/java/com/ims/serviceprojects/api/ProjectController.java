@@ -65,9 +65,9 @@ public class ProjectController {
     public ResponseEntity<Void> update(@PathVariable long id, @RequestBody ProjectDTO project) {
         final String description = project.getProject_description();
         final float price = project.getDeposits();
-        final String nft_url = project.getProject_url();
+        final String project_url = project.getProject_url();
         try {
-            projectService.update(id, description, price, nft_url);
+            projectService.update(id, description, price, project_url);
             return ResponseEntity.noContent().build();
         } catch (IllegalArgumentException e) {
             return ResponseEntity.notFound().build();

@@ -22,6 +22,7 @@ import java.util.Optional;
 public final class ProjectService {
     private final ProjectRepo projectRepo;
     private final String supportURL = "http://service-support:8082/supports/";
+//    private final String supportURL = "http://localhost/supports/";
     public List<Project> fetchAll() {
         return projectRepo.findAll();
     }
